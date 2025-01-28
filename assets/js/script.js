@@ -62,9 +62,9 @@ const downloadBtn = document.querySelector('.download-btn');
 downloadBtn.addEventListener('click', downloadResume);
 
 // Contact form variables
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
+const form = document.querySelector("#contact-form");
+const formInputs = document.querySelectorAll(".form-input");
+const formBtn = document.querySelector(".form-btn");
 
 // Add event to all form input fields
 for (let i = 0; i < formInputs.length; i++) {
@@ -76,10 +76,13 @@ for (let i = 0; i < formInputs.length; i++) {
     }
   });
 }
-//google sheets
 
+// Google Sheets integration
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxg30NKDAbK3qAh5F2f9yRjIuV5uV2KmU63XW03jvD0r7j8Yc8iZ4Y7wPu5VeZnV-Vz/exec';
 const contactForm = document.getElementById('contact-form');
+const popupMessage = document.getElementById('popup-message');
+const closePopup = document.getElementById('close-popup');
+const body = document.body;
 
 contactForm.addEventListener('submit', e => {
   e.preventDefault();
@@ -91,8 +94,15 @@ contactForm.addEventListener('submit', e => {
   })
   .then(response => {
     if (response.ok) {
-      alert("Thank you! Your form has been submitted successfully.");
+      body.classList.add('blur-background');
+      popupMessage.style.display = 'block';
       contactForm.reset(); // Reset the form after submission
+
+      // Hide the popup after 3 seconds
+      setTimeout(() => {
+        popupMessage.style.display = 'none';
+        body.classList.remove('blur-background');
+      }, 3000);
     } else {
       throw new Error('Network response was not ok.');
     }
@@ -103,7 +113,13 @@ contactForm.addEventListener('submit', e => {
   });
 });
 
-  
+// Close popup message
+closePopup.addEventListener('click', () => {
+  popupMessage.style.display = 'none';
+  body.classList.remove('blur-background');
+});
+
+// Navigation links functionality
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 

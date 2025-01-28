@@ -378,7 +378,6 @@
     opacity: 1;
     visibility: visible;
   }
-  
   .contacts-list {
     display: grid;
     grid-template-columns: 1fr;
@@ -425,12 +424,45 @@
     font-size: 18px;
   }
   
-  
   .social-item .social-link:hover { color: var(--light-gray); }
   
+  /* Popup message styling */
+  .popup-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #444;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 90%;
+    width: 500px;
+    text-align: center;
+  }
+  
+  .popup-message p {
+    margin: 0 0 10px;
+  }
+  
+  .close-popup {
+    background-color: #ffcc00;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .close-popup:hover {
+    background-color: #e6b800;
+  }
   
   
-  
+
   
   /*-----------------------------------*\
     #NAVBAR
@@ -840,7 +872,6 @@
   /**
    * skills 
    */
-  
    .skills-title {
     margin-bottom: 20px;
   }
@@ -867,19 +898,20 @@
   }
   
   .img-container {
-    width: 10%; /* Adjust width to fit 5 images per row */
+    width: 8%; /* Adjust width to fit more images per row */
     margin-bottom: 10px; /* Margin between images */
     text-align: center;
     position: relative; /* Needed for tooltip positioning */
   }
   
   .img-container img {
-    max-width: 90%;
-    height: auto;
+    /* max-width: 80%; Reduce the size of the logos */
+    width: 40%;
+    height: 100%;
   }
   
   .img-container.white-bg {
-    background-color: white;
+    /* background-color: white; */
     padding: 5px; /* Optional padding for white background */
     border-radius: 5px; /* Optional border radius */
   }
@@ -915,6 +947,11 @@
     opacity: 1;
   }
   
+  @media (max-width: 768px) {
+    .img-container {
+      width: 15%; /* Adjust width for smaller screens */
+    }
+  }
   
   
   
