@@ -71,22 +71,29 @@ export default function AboutSection() {
               <img
                 src="/parsh_pic_withoutbg.png"
                 alt="Parsh Jain"
-                className="w-15 h-15 md:w-20 md:h-30 rounded-full object-cover border-4 border-primary shadow-lg"
+                className="
+                  w-30 h-40           /* mobile default: 4rem × 4rem */
+                  sm:w-20 sm:h-20     /* small screens ≥640px: 5rem × 5rem */
+                  md:w-24 md:h-24     /* medium screens ≥768px: 6rem × 6rem */
+                  lg:w-32 lg:h-32     /* large screens ≥1024px: 8rem × 8rem */
+                  rounded-full
+                  object-cover
+                  border-4 border-primary
+                  shadow-lg
+                "
               />
             </div>
             <h2 className="text-3xl font-bold tracking-tight pb-2 border-b border-primary/20">
-  About <span className="text-primary">Me</span>
-</h2>
-<p className="text-muted-foreground leading-relaxed">
-  I'm a passionate full-stack developer and B.Tech student with Honours in Artificial Intelligence at K.J. Somaiya College of Engineering. I specialize in crafting dynamic, user-friendly web applications and integrating machine learning to solve impactful problems.
-</p>
-<p className="text-muted-foreground leading-relaxed mt-2">
-  With a strong foundation in technologies like React, Node.js, Python, and Firebase, I love turning ideas into functional digital experiences. Whether it's building scalable systems, analyzing data, or contributing to hackathons, I’m driven by curiosity and the desire to create meaningful tech solutions.
-</p>
-
-
-
+              About <span className="text-primary">Me</span>
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              I'm a passionate full-stack developer and B.Tech student with Honours in Artificial Intelligence at K.J. Somaiya College of Engineering. I specialize in crafting dynamic, user-friendly web applications and integrating machine learning to solve impactful problems.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mt-2">
+              With a strong foundation in technologies like React, Node.js, Python, and Firebase, I love turning ideas into functional digital experiences. Whether it's building scalable systems, analyzing data, or contributing to hackathons, I’m driven by curiosity and the desire to create meaningful tech solutions.
+            </p>
           </div>
+
           {/* Right Column: Stats Card */}
           <div className="relative">
             <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-600 rounded-lg blur opacity-75 transition duration-1000 animate-pulse"></div>

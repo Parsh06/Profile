@@ -61,7 +61,7 @@ export default function ProjectsSection() {
     },
     {
       title: "MBP Trust NGO",
-      image: "/mbp_Trust_NGO.png",
+      image: "/mbp.png",
       demoUrl: "https://mbptrust.org/",
       githubUrl: null,
       category: ["Web Development"],
