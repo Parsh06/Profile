@@ -69,13 +69,13 @@ export default function AboutSection() {
             {/* Circular image container */}
             <div className="flex justify-center md:justify-start">
               <img
-                src="/parsh_pic_withoutbg.png"
+                src="/Parsh_photoCopy1.jpg"
                 alt="Parsh Jain"
                 className="
                   w-30 h-40           /* mobile default: 4rem × 4rem */
                   sm:w-20 sm:h-20     /* small screens ≥640px: 5rem × 5rem */
                   md:w-24 md:h-24     /* medium screens ≥768px: 6rem × 6rem */
-                  lg:w-32 lg:h-32     /* large screens ≥1024px: 8rem × 8rem */
+                  lg:w-22 lg:h-32     /* large screens ≥1024px: 8rem × 8rem */
                   rounded-full
                   object-cover
                   border-4 border-primary
