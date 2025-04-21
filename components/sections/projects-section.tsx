@@ -97,7 +97,7 @@ export default function ProjectsSection() {
     },
     {
       title: "Ecommerce Website",
-      image: "/FashionHub.png",
+      image: "/Fashio_hub.png",
       demoUrl: null,
       githubUrl: "https://github.com/Parsh06/Website_ECO",
       category: ["Web Development"],
