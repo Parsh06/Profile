@@ -3,14 +3,37 @@
 import { useRef, Suspense, useMemo } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
 import { Points, PointMaterial } from "@react-three/drei"
-import * as random from "maath/random/dist/maath-random.esm"
+
+// Generate random points in sphere without maath dependency
+const generateSpherePoints = (count: number, radius: number): Float32Array => {
+  const positions = new Float32Array(count * 3)
+  
+  for (let i = 0; i < count; i++) {
+    const i3 = i * 3
+    
+    // Generate random point in sphere using rejection sampling
+    let x, y, z
+    do {
+      x = Math.random() * 2 - 1
+      y = Math.random() * 2 - 1
+      z = Math.random() * 2 - 1
+    } while (x * x + y * y + z * z > 1)
+    
+    // Scale by radius
+    positions[i3] = x * radius
+    positions[i3 + 1] = y * radius
+    positions[i3 + 2] = z * radius
+  }
+  
+  return positions
+}
 
 const Stars = (props: any) => {
-  const ref = useRef<any>()
+  const ref = useRef<any>(null)
 
   // ✅ Generate sphere positions only once
   const sphere = useMemo(
-    () => random.inSphere(new Float32Array(5000), { radius: 1.2 }),
+    () => generateSpherePoints(5000, 1.2),
     []
   )
 

@@ -1,0 +1,525 @@
+{
+  "personalInfo": {
+    "name": "Parsh Jain",
+    "title": "Full-Stack Developer & AI Enthusiast",
+    "location": "Mumbai, India",
+    "email": "parshjain46@gmail.com",
+    "phone": "+91-9619261352",
+    "bio": "Passionate full-stack developer and B.Tech student with Honours in Artificial Intelligence at K.J. Somaiya College of Engineering. I specialize in crafting dynamic, user-friendly web applications and integrating machine learning to solve impactful problems.",
+    "yearsOfExperience": "3+",
+    "projectsCompleted": "13+",
+    "hackathonsParticipated": "3+",
+    "technologiesMastered": "10+"
+  },
+  "education": [
+    {
+      "institution": "K.J. Somaiya College of Engineering",
+      "degree": "B.Tech with Honours in Artificial Intelligence",
+      "duration": "2022 - 2026",
+      "status": "Currently Pursuing",
+      "description": "Currently pursuing my Bachelor's degree in Engineering. Studying various subjects related to my field of interest and actively participating in extracurricular activities.",
+      "coursework": [
+        "Machine Learning",
+        "Deep Learning",
+        "Computer Vision",
+        "Natural Language Processing",
+        "Data Structures and Algorithms",
+        "Web Development",
+        "Database Management Systems",
+        "Software Engineering"
+      ]
+    },
+    {
+      "institution": "Pace Junior Science College",
+      "degree": "Higher Secondary Education (Science)",
+      "duration": "2020 - 2022",
+      "status": "Completed",
+      "description": "Completed my higher secondary education with a focus on science and mathematics. Developed a strong foundation in these subjects, preparing for college-level studies.",
+      "subjects": ["Physics", "Chemistry", "Mathematics", "Computer Science"]
+    },
+    {
+      "institution": "ST. Peter's High School",
+      "degree": "Secondary Education",
+      "duration": "2006 - 2020",
+      "status": "Completed",
+      "description": "Completed my secondary education with a well-rounded curriculum including languages, sciences, and humanities. Participated in various extracurricular activities, developing interpersonal skills alongside academic achievements."
+    }
+  ],
+  "workExperience": [
+    {
+      "company": "Barclays",
+      "position": "Software Testing Intern",
+      "duration": "June 2025 - July 2025",
+      "type": "Internship",
+      "location": "Pune, India",
+      "description": "Software Testing Intern focused on automation testing and UI validation for trading applications.",
+      "responsibilities": [
+        "Automated test workflows for trade setup applications using Selenium",
+        "Validated branding guidelines and UI compliance across Barclays platforms using Axe Core, Lighthouse, and Percy",
+        "Collaborated with Agile teams including QA, DevOps, and Product during CI/CD pipeline deployments"
+      ],
+      "technologies": ["Selenium", "Axe Core", "Lighthouse", "Percy", "Java", "TestNG", "Jenkins"]
+    },
+    {
+      "company": "MBP Trust",
+      "position": "Web Developer",
+      "duration": "April 2024 - July 2024",
+      "type": "Contract",
+      "location": "Remote",
+      "description": "Developed a professional website for a non-profit organization, focusing on user engagement and donation integration.",
+      "responsibilities": [
+        "Created a responsive website using React and Node.js",
+        "Integrated Razorpay for secure donation processing",
+        "Implemented event management features and testimonials section",
+        "Ensured accessibility and user-friendly navigation"
+      ],
+      "technologies": ["React", "Node.js", "Razorpay", "MongoDB"]
+    },
+    {
+      "company": "Falcon X",
+      "position": "Web Developer",
+      "duration": "March 2024 - June 2024",
+      "type": "Internship",
+      "location": "Remote",
+      "description": "Worked as a Web Developer intern, gaining hands-on experience in professional web development.",
+      "responsibilities": [
+        "Developed and maintained company websites",
+        "Provided technical support to clients",
+        "Implemented new features and functionality",
+        "Collaborated with senior developers on projects",
+        "Learned industry best practices and development workflows"
+      ],
+      "technologies": ["HTML", "CSS", "JavaScript", "React", "PHP", "MySQL"]
+    },
+    {
+      "company": "Freelance",
+      "position": "Web Developer",
+      "duration": "January 2023 - Present",
+      "type": "Freelance",
+      "location": "Remote",
+      "description": "Working as a Web Developer, focusing on creating responsive and user-friendly websites for clients.",
+      "responsibilities": [
+        "Developing and maintaining websites, ensuring high performance and reliability",
+        "Providing technical support and implementing updates to enhance website functionality",
+        "Creating responsive designs that work across all devices",
+        "Integrating modern web technologies and frameworks",
+        "Collaborating with clients to understand requirements and deliver solutions"
+      ],
+      "technologies": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Firebase", "Node.js"]
+    }
+  ],
+  "volunteeringExperience": [
+    {
+      "organization": "KJSCE CodeCell",
+      "position": "Committee Head",
+      "duration": "July 2023 - July 2025",
+      "type": "College Club",
+      "location": "Mumbai, India",
+      "description": "Committee Head, managing alumni repositories and organizing national-level events and workshops for tech enthusiasts.",
+      "responsibilities": [
+        "Enhancing the management of alumni repositories to facilitate better connections and resource sharing",
+        "Organizing workshops and events that promote skill development and knowledge sharing among participants",
+        "Encouraging collaboration on open-source projects to foster a community of tech enthusiasts"
+      ],
+      "technologies": ["Git", "GitHub", "Event Management", "Community Building"]
+    },
+    {
+      "organization": "Redshift Racing India",
+      "position": "Web Developer Intern",
+      "duration": "November 2022 - October 2023",
+      "type": "College Club",
+      "location": "Mumbai, India",
+      "description": "Web Developer Intern collaborating on enhancing the Redshift Racing India website for improved user experience and functionality.",
+      "responsibilities": [
+        "Ensuring website stability and compatibility across various platforms",
+        "Conducting thorough testing, debugging, and optimization to enhance website performance",
+        "Designed and implemented the team website using React and Next.js",
+        "Integrated dynamic content management features"
+      ],
+      "technologies": ["React", "Next.js", "Tailwind CSS", "Framer Motion"]
+    }
+  ],
+  "technicalSkills": {
+    "frontend": {
+      "frameworks": ["React", "Next.js", "Vue.js"],
+      "languages": ["JavaScript", "TypeScript", "HTML5", "CSS3"],
+      "styling": ["Tailwind CSS", "SASS/SCSS", "Styled Components", "CSS Modules"],
+      "tools": ["Webpack", "Vite", "Babel", "ESLint", "Prettier"]
+    },
+    "backend": {
+      "languages": ["Node.js", "Python", "PHP"],
+      "frameworks": ["Express.js", "FastAPI", "Django"],
+      "databases": ["Firebase", "MongoDB", "MySQL", "PostgreSQL"],
+      "cloud": ["Firebase", "AWS", "Vercel", "Netlify"],
+      "apis": ["REST", "GraphQL", "WebSockets"]
+    },
+    "aiMl": {
+      "languages": ["Python", "R"],
+      "libraries": ["TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy"],
+      "specializations": ["Machine Learning", "Deep Learning", "Computer Vision", "Data Analysis"],
+      "tools": ["Jupyter", "Google Colab", "Kaggle", "Power BI"]
+    },
+    "tools": {
+      "versionControl": ["Git", "GitHub", "GitLab"],
+      "development": ["VS Code", "PyCharm", "Postman", "Docker"],
+      "design": ["Figma", "Adobe XD", "Canva"],
+      "other": ["Linux", "Windows", "npm", "yarn", "pip"]
+    },
+    "softSkills": [
+      "Problem Solving",
+      "Team Collaboration",
+      "Communication",
+      "Leadership",
+      "Time Management",
+      "Adaptability",
+      "Critical Thinking",
+      "Project Management"
+    ]
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "Stock Broking Platform",
+      "description": "A dynamic web-based platform for real-time stock market visualization and trading simulations. Features live data integration, interactive financial charts, and predictive analytics powered by AI models.",
+      "image": "/stockbroking.png",
+      "demoUrl": "https://stock-62eb3.web.app/",
+      "githubUrl": null,
+      "category": ["Artificial Intelligence", "Web Development"],
+      "technologies": ["React", "Node.js", "Python", "TensorFlow", "Chart.js", "Firebase"],
+      "features": [
+        "Real-time stock data visualization",
+        "AI-powered price prediction",
+        "Interactive trading simulation",
+        "Portfolio management",
+        "Risk analysis tools"
+      ],
+      "status": "Completed",
+      "year": "2024"
+    },
+    {
+      "id": 2,
+      "title": "Chess Game Prediction",
+      "description": "An AI-driven chess prediction web app that analyzes historical moves and board positions to forecast game outcomes. Utilizes machine learning models to simulate strategies and suggest optimal plays.",
+      "image": "/chesspredict.png",
+      "demoUrl": "https://chesspredictoutcome.vercel.app/",
+      "githubUrl": "https://github.com/Parsh06/chess",
+      "category": ["Machine Learning", "Web Development"],
+      "technologies": ["Python", "TensorFlow", "React", "Next.js", "Chess.js"],
+      "features": [
+        "Chess position analysis",
+        "Move prediction algorithm",
+        "Game outcome forecasting",
+        "Interactive chess board",
+        "Historical game analysis"
+      ],
+      "status": "Completed",
+      "year": "2024"
+    },
+    {
+      "id": 3,
+      "title": "Smart Business Cost Planning",
+      "description": "A smart cost-planning tool tailored for small and medium enterprises (SMEs). Automates expense tracking, generates financial reports, and offers AI-based suggestions to optimize budget allocations and operational costs.",
+      "image": "/smartbuisnesscostplaning.png",
+      "demoUrl": "https://du-hacks.web.app/",
+      "githubUrl": "https://github.com/Parsh06/du-hacks",
+      "category": ["Artificial Intelligence", "Web Development"],
+      "technologies": ["React", "Firebase", "Python", "Machine Learning", "Chart.js"],
+      "features": [
+        "Automated expense tracking",
+        "AI-powered budget optimization",
+        "Financial report generation",
+        "Cost prediction analytics",
+        "SME-focused features"
+      ],
+      "status": "Completed",
+      "year": "2024"
+    },
+    {
+      "id": 4,
+      "title": "Redshift Racing India",
+      "description": "A sleek, high-performance website for a collegiate racing team. Showcases event highlights, team rosters, project galleries, and real-time announcements with a mobile-first, responsive design.",
+      "image": "/Redshift.png",
+      "demoUrl": "http://www.redshift-racing.in/",
+      "githubUrl": "https://github.com/Parsh06/Redshift-website",
+      "category": ["Web Development"],
+      "technologies": ["React", "Next.js", "Tailwind CSS", "Framer Motion"],
+      "features": [
+        "Team showcase",
+        "Event gallery",
+        "News and announcements",
+        "Mobile-responsive design",
+        "Performance optimized"
+      ],
+      "status": "Completed",
+      "year": "2023"
+    },
+    {
+      "id": 5,
+      "title": "Dautyam Club Website",
+      "description": "Official club portal built for a college council. Offers event scheduling, photo galleries, member highlights, and a CMS-friendly admin panel for seamless content updates and announcements.",
+      "image": "/dautyam.png",
+      "demoUrl": "https://dautyam-website.vercel.app/",
+      "githubUrl": "https://github.com/Parsh06/Dautyam-Website",
+      "category": ["Web Development"],
+      "technologies": ["React", "Next.js", "Firebase", "Tailwind CSS"],
+      "features": [
+        "Event management system",
+        "Photo gallery",
+        "Member profiles",
+        "Admin panel",
+        "Content management"
+      ],
+      "status": "Completed",
+      "year": "2023"
+    },
+    {
+      "id": 6,
+      "title": "MBP Trust NGO Website",
+      "description": "A professionally developed website for a non-profit organization. Includes donation integration via Razorpay, event pages, testimonials, and a responsive layout that ensures accessibility across all devices.",
+      "image": "/mbp.png",
+      "demoUrl": "https://mbptrust.org/",
+      "githubUrl": null,
+      "category": ["Web Development"],
+      "technologies": ["React", "Node.js", "Razorpay", "MongoDB"],
+      "features": [
+        "Donation integration",
+        "Event management",
+        "Testimonials section",
+        "Responsive design",
+        "Accessibility features"
+      ],
+      "status": "Completed",
+      "year": "2023"
+    },
+    {
+      "id": 7,
+      "title": "Food Recipe Finder",
+      "description": "An intuitive recipe finder app allowing users to search meals by ingredients or keywords. Includes detailed instructions, nutritional breakdowns, and responsive UI for a delightful cooking experience.",
+      "image": "/FoodRecipe.png",
+      "demoUrl": "https://foodingrediants.netlify.app/",
+      "githubUrl": null,
+      "category": ["Web Development"],
+      "technologies": ["JavaScript", "HTML5", "CSS3", "Recipe API"],
+      "features": [
+        "Recipe search functionality",
+        "Ingredient-based filtering",
+        "Nutritional information",
+        "Step-by-step instructions",
+        "Responsive design"
+      ],
+      "status": "Completed",
+      "year": "2023"
+    },
+    {
+      "id": 8,
+      "title": "Kriya Dhrishti - Anomaly Detection",
+      "description": "A real-time anomaly detection system using computer vision and deep learning. Designed to identify irregular human activity in surveillance footage for use in smart cities and security infrastructure.",
+      "image": "/Kriya.png",
+      "demoUrl": null,
+      "githubUrl": "https://github.com/Parsh06/Sih-Final",
+      "category": ["Machine Learning", "Web Development"],
+      "technologies": ["Python", "OpenCV", "TensorFlow", "Flask", "Computer Vision"],
+      "features": [
+        "Real-time video analysis",
+        "Anomaly detection algorithms",
+        "Security monitoring",
+        "Alert system",
+        "Smart city integration"
+      ],
+      "status": "Completed",
+      "year": "2023"
+    },
+    {
+      "id": 9,
+      "title": "Satya Kendra - Sentiment Analysis",
+      "description": "Sentiment analysis platform that processes user-generated text and classifies sentiments with high accuracy. Features an interactive dashboard for data visualization and NLP model performance tracking.",
+      "image": "/satya_kendra.png",
+      "demoUrl": null,
+      "githubUrl": "https://github.com/Parsh06/Team-Should",
+      "category": ["Machine Learning", "Web Development"],
+      "technologies": ["Python", "NLTK", "Scikit-learn", "Flask", "React"],
+      "features": [
+        "Text sentiment analysis",
+        "Interactive dashboard",
+        "Performance metrics",
+        "Data visualization",
+        "Model accuracy tracking"
+      ],
+      "status": "Completed",
+      "year": "2023"
+    },
+    {
+      "id": 10,
+      "title": "E-commerce Fashion Hub",
+      "description": "A full-stack ecommerce web application featuring secure user authentication, product filtering, cart management, and order processing. Built for scalability and optimized for high-performance browsing.",
+      "image": "/Fashio_hub.png",
+      "demoUrl": null,
+      "githubUrl": "https://github.com/Parsh06/Website_ECO",
+      "category": ["Web Development"],
+      "technologies": ["React", "Node.js", "MongoDB", "Express.js", "Stripe"],
+      "features": [
+        "User authentication",
+        "Product catalog",
+        "Shopping cart",
+        "Payment integration",
+        "Order management"
+      ],
+      "status": "Completed",
+      "year": "2023"
+    },
+    {
+      "id": 11,
+      "title": "Automatic Email Sender",
+      "description": "A utility tool that enables scheduled email delivery with dynamic content templates. Designed for marketing automation and bulk communication, with Google Apps Script and Gmail API integration.",
+      "image": "/Automatic.png",
+      "demoUrl": null,
+      "githubUrl": "https://github.com/Parsh06/Automatic-Email-Sender",
+      "category": ["Web Development", "Automation"],
+      "technologies": ["Google Apps Script", "Gmail API", "JavaScript", "HTML"],
+      "features": [
+        "Scheduled email delivery",
+        "Dynamic templates",
+        "Bulk email support",
+        "Gmail integration",
+        "Automation features"
+      ],
+      "status": "Completed",
+      "year": "2023"
+    },
+    {
+      "id": 12,
+      "title": "Expenditure Budget Tracker",
+      "description": "An interactive budgeting web app that helps users manage daily, weekly, and monthly expenses. Includes visual graphs, categorized spending, and data export functionality for financial planning.",
+      "image": "/expenditure.png",
+      "demoUrl": null,
+      "githubUrl": "https://github.com/Parsh06/Expenditure-budget",
+      "category": ["Web Development"],
+      "technologies": ["JavaScript", "Chart.js", "HTML5", "CSS3", "Local Storage"],
+      "features": [
+        "Expense tracking",
+        "Budget planning",
+        "Visual analytics",
+        "Category management",
+        "Data export"
+      ],
+      "status": "Completed",
+      "year": "2023"
+    },
+    {
+      "id": 13,
+      "title": "Power BI Data Analytics Dashboard",
+      "description": "A business intelligence project using Microsoft Power BI. Offers visual dashboards, KPI tracking, and deep insights through interactive charts and slicers, making data-driven decisions seamless.",
+      "image": "/PowerBi.png",
+      "demoUrl": null,
+      "githubUrl": "https://github.com/Parsh06/PowerBi-",
+      "category": ["Data Analysis"],
+      "technologies": ["Power BI", "SQL", "Excel", "DAX", "Power Query"],
+      "features": [
+        "Interactive dashboards",
+        "KPI tracking",
+        "Data visualization",
+        "Business intelligence",
+        "Report automation"
+      ],
+      "status": "Completed",
+      "year": "2023"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Smart India Hackathon Participant",
+      "description": "Participated in Smart India Hackathon, developing innovative solutions for real-world problems using AI and machine learning technologies.",
+      "year": "2023",
+      "category": "Hackathon"
+    },
+    {
+      "title": "Multiple Hackathon Participations",
+      "description": "Actively participated in 3+ hackathons, showcasing problem-solving skills and innovative thinking in competitive environments.",
+      "year": "2022-2024",
+      "category": "Hackathon"
+    },
+    {
+      "title": "Open Source Contributions",
+      "description": "Contributed to various open-source projects, helping improve software accessibility and functionality for the developer community.",
+      "year": "2023-2024",
+      "category": "Open Source"
+    },
+    {
+      "title": "Technical Competition Winner",
+      "description": "Won several technical competitions at college level, demonstrating expertise in programming and problem-solving.",
+      "year": "2022-2024",
+      "category": "Competition"
+    }
+  ],
+  "services": [
+    {
+      "title": "Web Design",
+      "description": "Create high quality website design as per required specifications and modern standards.",
+      "icon": "Layout"
+    },
+    {
+      "title": "Web Development",
+      "description": "Write codes for the designed website integrating full features and functionality to it.",
+      "icon": "Code"
+    },
+    {
+      "title": "Data Analysis",
+      "description": "Analyzing and interpreting data to derive meaningful insights and make informed decisions.",
+      "icon": "Database"
+    },
+    {
+      "title": "Hackathon Participation",
+      "description": "Participate in hackathons to solve real world problems using innovative technological solutions.",
+      "icon": "Cpu"
+    }
+  ],
+  "interests": [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Web Development",
+    "Data Science",
+    "Competitive Programming",
+    "Open Source",
+    "Technology Innovation",
+    "Hackathons",
+    "Chess",
+    "Reading Tech Blogs"
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "proficiency": "Fluent"
+    },
+    {
+      "language": "Hindi",
+      "proficiency": "Native"
+    },
+    {
+      "language": "Marathi",
+      "proficiency": "Conversational"
+    }
+  ],
+  "socialMedia": {
+    "linkedin": "https://www.linkedin.com/in/parsh-jain-a50091253/",
+    "github": "https://github.com/Parsh06",
+    "email": "parshjain46@gmail.com",
+    "portfolio": "https://parsh-portfolio.vercel.app"
+  },
+  "availability": {
+    "status": "Available",
+    "lookingFor": [
+      "Full-stack web development projects",
+      "AI/ML integration challenges",
+      "Startup collaborations",
+      "Hackathon participation",
+      "Freelance opportunities",
+      "Internship opportunities"
+    ],
+    "workPreferences": [
+      "Remote work",
+      "Part-time projects",
+      "Contract work",
+      "Collaborative projects"
+    ]
+  }
+}

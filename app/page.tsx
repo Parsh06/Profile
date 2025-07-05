@@ -11,6 +11,7 @@ import ResumeSection from "@/components/sections/resume-section"
 import ProjectsSection from "@/components/sections/projects-section"
 import AchievementsSection from "@/components/sections/achievements-section"
 import ContactSection from "@/components/sections/contact-section"
+import ChatSection from "@/components/sections/chat-section"
 import { StarsCanvas } from "@/components/canvas/stars"
 import { cn } from "@/lib/utils"
 
@@ -36,6 +37,7 @@ export default function Home() {
     projects: <ProjectsSection />,
     achievements: <AchievementsSection />,
     contact: <ContactSection />,
+    ChatNow: <ChatSection />,
   }
 
   if (isLoading) {

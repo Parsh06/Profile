@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Home, FileText, Briefcase, Award, MessageSquare, Star, X } from "lucide-react"
+import { Home, FileText, Briefcase, Award, MessageSquare, Star, X, Bot } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface FloatingNavProps {
@@ -38,6 +38,8 @@ export default function FloatingNav({ activeSection, setActiveSection }: Floatin
     { id: "projects", label: "Projects", icon: Briefcase },
     { id: "achievements", label: "Achievements", icon: Award },
     { id: "contact", label: "Contact", icon: MessageSquare },
+   { id: "ChatNow", label: "ChatNow", icon: Bot }
+
   ]
 
   const toggleMenu = () => {
@@ -46,114 +48,138 @@ export default function FloatingNav({ activeSection, setActiveSection }: Floatin
 
   // Calculate positions in a circle around the center button
   const getButtonPosition = (index: number, totalItems: number) => {
-    // Adjust radius based on screen size
+    // Adjust radius based on screen size with better spacing
     const isMobile = windowSize.width < 640
-    const radius = isMobile ? 55 : 65
+    const radius = isMobile ? 80 : 100 // Increased radius for better spacing
     
-    // For smaller screens, use a semi-circle instead of full circle
-    // to prevent items from going off screen
-    const angleStep = isMobile 
-      ? Math.PI / (totalItems - 1) // Semi-circle for mobile
-      : (2 * Math.PI) / totalItems // Full circle for larger screens
+    // Create a semi-circle arc upward (top half of circle)
+    // Total arc of 180 degrees (π radians) - from left to right via top
+    const totalAngle = Math.PI // 180 degrees
+    const angleStep = totalAngle / (totalItems - 1) // Divide arc evenly
     
-    // Start from left on mobile (to keep items on screen)
-    const startAngle = isMobile ? Math.PI : -Math.PI / 2
-    const angle = startAngle + (index * angleStep)
+    // Start from left (π radians) and go to right (0 radians) via top
+    // This creates an upward semicircle
+    const startAngle = Math.PI
+    const angle = startAngle - (index * angleStep) // Subtract to go counter-clockwise
     
     const x = radius * Math.cos(angle)
-    const y = radius * Math.sin(angle)
+    const y = -radius * Math.sin(angle) // Negative y to flip upward
     
     return { x, y }
   }
 
   return (
-    <div className="fixed bottom-6 right-12 z-50 md:right-24"> {/* Increased right property */}{/* Adjusted right property */}
-  {/* Backdrop for closing menu when clicking outside */}
-  <AnimatePresence>
-    {isOpen && (
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="fixed inset-0 bg-black/20 z-40"
-        onClick={() => setIsOpen(false)}
-      />
-    )}
-  </AnimatePresence>
-
-  <div className="relative z-50">
-    {/* Navigation items */}
-    <AnimatePresence>
-      {isOpen &&
-        navItems.map((item, index) => {
-          const position = getButtonPosition(index, navItems.length)
-
-          return (
-            <motion.button
-              key={item.id}
-              initial={{ opacity: 0, x: 0, y: 0, scale: 0 }}
-              animate={{
-                opacity: 1,
-                x: position.x,
-                y: position.y,
-                scale: 1,
-              }}
-              exit={{ opacity: 0, x: 0, y: 0, scale: 0 }}
-              transition={{
-                duration: 0.3,
-                delay: 0.05 * index,
-              }}
-              onClick={() => {
-                setActiveSection(item.id)
-                setIsOpen(false)
-              }}
-              className={cn(
-                "absolute flex items-center justify-center w-10 h-10 md:w-11 md:h-11 rounded-full shadow-lg transition-all",
-                activeSection === item.id
-                  ? "bg-primary text-primary-foreground scale-110"
-                  : "bg-white text-gray-700 hover:bg-primary/20"
-              )}
-            >
-              <item.icon className="w-4 h-4 md:w-5 md:h-5" />
-              <span className="sr-only">{item.label}</span>
-            </motion.button>
-          )
-        })}
-    </AnimatePresence>
-
-    {/* Main toggle button */}
-    <motion.button
-      onClick={toggleMenu}
-      initial={{ rotate: 0 }}
-      animate={{ rotate: isOpen ? 180 : 0 }}
-      transition={{ duration: 0.3 }}
-      className="relative flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary text-primary-foreground shadow-xl"
-    >
-      <AnimatePresence mode="wait">
-        {isOpen ? (
+    <div className="fixed bottom-8 right-16 z-50 md:bottom-10 md:right-20">
+      {/* Backdrop for closing menu when clicking outside */}
+      <AnimatePresence>
+        {isOpen && (
           <motion.div
-            key="close"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.5 }}
-            transition={{ duration: 0.2 }}
-          >
-            <X className="w-5 h-5 md:w-6 md:h-6" />
-          </motion.div>
-        ) : (
-          <motion.div
-            key="open"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.5 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Star className="w-5 h-5 md:w-6 md:h-6" />
-          </motion.div>
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
+            onClick={() => setIsOpen(false)}
+          />
         )}
       </AnimatePresence>
-    </motion.button>
-  </div>
-</div>
+
+      <div className="relative z-50">
+        {/* Navigation items */}
+        <AnimatePresence>
+          {isOpen &&
+            navItems.map((item, index) => {
+              const position = getButtonPosition(index, navItems.length)
+
+              return (
+                <motion.button
+                  key={item.id}
+                  initial={{ opacity: 0, x: 0, y: 0, scale: 0 }}
+                  animate={{
+                    opacity: 1,
+                    x: position.x,
+                    y: position.y,
+                    scale: 1,
+                  }}
+                  exit={{ opacity: 0, x: 0, y: 0, scale: 0 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 20,
+                    delay: 0.05 * index,
+                  }}
+                  whileHover={{ 
+                    scale: 1.15,
+                    transition: { type: "spring", stiffness: 400, damping: 15 }
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => {
+                    setActiveSection(item.id)
+                    setIsOpen(false)
+                  }}
+                  className={cn(
+                    "absolute flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full shadow-xl transition-all backdrop-blur-sm border-2",
+                    activeSection === item.id
+                      ? "bg-primary text-primary-foreground border-primary scale-110 shadow-primary/30"
+                      : "bg-white/90 text-gray-700 hover:bg-primary/10 border-white/20 hover:border-primary/30 hover:text-primary"
+                  )}
+                >
+                  <item.icon className="w-5 h-5 md:w-6 md:h-6" />
+                  <span className="sr-only">{item.label}</span>
+                </motion.button>
+              )
+            })}
+        </AnimatePresence>
+
+        {/* Main toggle button */}
+        <motion.button
+          onClick={toggleMenu}
+          initial={{ scale: 1 }}
+          whileHover={{ 
+            scale: 1.05,
+            transition: { type: "spring", stiffness: 400, damping: 15 }
+          }}
+          whileTap={{ scale: 0.95 }}
+          className="relative flex items-center justify-center w-16 h-16 md:w-18 md:h-18 rounded-full bg-gradient-to-br from-primary to-primary/80 text-primary-foreground shadow-2xl border-4 border-white/20 backdrop-blur-sm hover:shadow-primary/30 transition-all duration-300"
+        >
+          <AnimatePresence mode="wait">
+            {isOpen ? (
+              <motion.div
+                key="close"
+                initial={{ opacity: 0, rotate: 180 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: 180 }}
+                transition={{ duration: 0.3 }}
+              >
+                <X className="w-7 h-7 md:w-8 md:h-8" />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="open"
+                initial={{ opacity: 0, rotate: 180 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: -180 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Star className="w-7 h-7 md:w-8 md:h-8" />
+              </motion.div>
+            )}
+          </AnimatePresence>
+          
+          {/* Pulse effect when closed */}
+          {!isOpen && (
+            <motion.div
+              className="absolute inset-0 rounded-full bg-primary"
+              initial={{ scale: 1, opacity: 0.7 }}
+              animate={{ scale: 1.4, opacity: 0 }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeOut"
+              }}
+            />
+          )}
+        </motion.button>
+      </div>
+    </div>
   )
 }

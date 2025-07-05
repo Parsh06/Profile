@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from "react"
 import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent } from "../ui/card"
 import { 
   Code, 
   Cpu, 
@@ -164,7 +164,11 @@ export default function AboutSection() {
                     shadow-2xl
                   "
                 />
-              
+                <motion.div
+                  className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-2 border-background"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
               </motion.div>
 
               {/* Name and title */}
