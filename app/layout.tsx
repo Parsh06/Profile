@@ -4,6 +4,7 @@ import { Inter, Poppins } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
+import { Analytics } from "@vercel/analytics/next"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({
           {children}
           <Toaster />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
