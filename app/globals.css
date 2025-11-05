@@ -4,7 +4,8 @@
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
+    /* Deep Indigo Night theme */
+    --background: 230 35% 6%;
     --foreground: 0 0% 98%;
 
     --card: 240 10% 3.9%;
@@ -13,74 +14,76 @@
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 47 95% 60%;
+    /* Accent: Amber/Gold glow */
+    --primary: 45 96% 60%;
     --primary-foreground: 240 5.9% 10%;
 
-    --secondary: 240 3.7% 15.9%;
+    --secondary: 230 25% 16%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 230 25% 14%;
+    --muted-foreground: 230 10% 70%;
 
-    --accent: 240 3.7% 15.9%;
+    --accent: 260 30% 18%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --border: 230 25% 18%;
+    --input: 230 25% 18%;
+    --ring: 230 80% 72%;
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 0 0% 98%;
+    --sidebar-background: 230 35% 7%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 45 96% 60%;
     --sidebar-primary-foreground: 240 5.9% 10%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 260 30% 18%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 230 25% 18%;
+    --sidebar-ring: 225 85% 70%;
 
     --radius: 0.5rem;
   }
 
   .light {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    /* Soft Light variant */
+    --background: 220 33% 98%;
+    --foreground: 240 10% 6%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 240 10% 6%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover-foreground: 240 10% 6%;
 
-    --primary: 47 95% 50%;
+    --primary: 40 96% 52%;
     --primary-foreground: 240 5.9% 10%;
 
-    --secondary: 240 4.8% 95.9%;
+    --secondary: 220 20% 96%;
     --secondary-foreground: 240 5.9% 10%;
 
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted: 220 20% 95%;
+    --muted-foreground: 230 10% 40%;
 
-    --accent: 240 4.8% 95.9%;
+    --accent: 220 20% 96%;
     --accent-foreground: 240 5.9% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 225 85% 40%;
 
-    --sidebar-background: 0 0% 98%;
+    --sidebar-background: 220 20% 98%;
     --sidebar-foreground: 240 5.9% 10%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-primary: 40 96% 52%;
+    --sidebar-primary-foreground: 240 5.9% 10%;
+    --sidebar-accent: 220 20% 96%;
     --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 240 5.9% 90%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-border: 220 15% 88%;
+    --sidebar-ring: 225 85% 50%;
   }
 }
 
@@ -139,19 +142,28 @@
 }
 
 /* Animated gradient background */
+
+/* Layered animated gradient with radial glows */
 .animated-gradient {
-  background: linear-gradient(
-    -45deg,
-    hsl(var(--background)),
-    hsl(var(--background) / 0.8),
-    hsl(var(--primary) / 0.1),
-    hsl(var(--background) / 0.9)
-  );
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  background:
+    radial-gradient(1200px 600px at 10% 10%, hsl(260 60% 18% / 0.35), transparent 60%),
+    radial-gradient(1000px 500px at 90% 20%, hsl(200 80% 30% / 0.20), transparent 60%),
+    radial-gradient(800px 600px at 50% 110%, hsl(45 96% 60% / 0.10), transparent 60%),
+    linear-gradient(
+      -45deg,
+      hsl(230 35% 7%),
+      hsl(240 30% 10%),
+      hsl(230 25% 8%),
+      hsl(235 35% 9%)
+    );
+  background-size: 200% 200%, 200% 200%, 200% 200%, 400% 400%;
+  animation:
+    gradientShift 22s ease infinite,
+    glowOne 18s ease-in-out infinite,
+    glowTwo 26s ease-in-out infinite;
 }
 
-@keyframes gradient {
+@keyframes gradientShift {
   0% {
     background-position: 0% 50%;
   }
@@ -161,6 +173,16 @@
   100% {
     background-position: 0% 50%;
   }
+}
+
+@keyframes glowOne {
+  0%, 100% { background-position: 0% 0%, 100% 0%, 50% 100%, 0% 0%; }
+  50% { background-position: 20% 10%, 80% 10%, 50% 90%, 100% 100%; }
+}
+
+@keyframes glowTwo {
+  0%, 100% { background-position: 0% 0%, 100% 0%, 50% 100%, 0% 0%; }
+  50% { background-position: -10% 20%, 110% 0%, 50% 110%, 100% 100%; }
 }
 
 /* Glow effect */
@@ -188,4 +210,13 @@
   background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary) / 0.7));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Subtle vignette overlay to focus content */
+.vignette::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.35) 100%);
 }

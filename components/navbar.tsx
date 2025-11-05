@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import { Switch } from "@/components/ui/switch"
 import { 
   User, 
   FileText, 
@@ -18,9 +19,11 @@ interface NavbarProps {
   activeSection: string
   setActiveSection: (section: string) => void
   toggleSidebar: () => void
+  effectsEnabled?: boolean
+  setEffectsEnabled?: (v: boolean) => void
 }
 
-export default function Navbar({ activeSection, setActiveSection, toggleSidebar }: NavbarProps) {
+export default function Navbar({ activeSection, setActiveSection, toggleSidebar, effectsEnabled = false, setEffectsEnabled }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -90,9 +93,9 @@ export default function Navbar({ activeSection, setActiveSection, toggleSidebar 
           </motion.div>
         </motion.div>
 
-        {/* Desktop Navigation - Only visible on desktop */}
+        {/* Desktop Navigation + Controls - Only visible on desktop */}
         <motion.div 
-          className="hidden lg:flex items-center gap-2"
+          className="hidden lg:flex items-center gap-4"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
@@ -149,6 +152,14 @@ export default function Navbar({ activeSection, setActiveSection, toggleSidebar 
               )
             })}
           </nav>
+
+          {/* Effects toggle */}
+          {setEffectsEnabled && (
+            <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-background/60 backdrop-blur-sm border border-border/50">
+              <span className="text-sm text-muted-foreground">Effects</span>
+              <Switch checked={effectsEnabled} onCheckedChange={(v) => setEffectsEnabled(v)} />
+            </div>
+          )}
         </motion.div>
       </div>
     </motion.header>

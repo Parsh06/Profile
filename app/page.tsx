@@ -14,11 +14,15 @@ import ContactSection from "@/components/sections/contact-section"
 import ChatSection from "@/components/sections/chat-section"
 import { StarsCanvas } from "@/components/canvas/stars"
 import { cn } from "@/lib/utils"
+import { useMediaQuery } from "@/hooks/use-media-query"
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("about")
   const [isLoading, setIsLoading] = useState(true)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const isMobile = useMediaQuery("(max-width: 768px)")
+  const prefersReducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)")
+  const [effectsEnabled, setEffectsEnabled] = useState(false)
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -26,6 +30,21 @@ export default function Home() {
     }, 2000)
     return () => clearTimeout(timer)
   }, [])
+
+  // Load persisted preference for visual effects
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("effectsEnabled")
+      if (saved !== null) setEffectsEnabled(saved === "true")
+    } catch {}
+  }, [])
+
+  // Persist preference
+  useEffect(() => {
+    try {
+      localStorage.setItem("effectsEnabled", String(effectsEnabled))
+    } catch {}
+  }, [effectsEnabled])
 
   const toggleSidebar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
@@ -45,15 +64,21 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen animated-gradient">
+    <main className="min-h-screen animated-gradient vignette">
       <div className="relative z-0">
-        <StarsCanvas />
-        <ParticlesBackground />
+        {effectsEnabled && !(isMobile || prefersReducedMotion) && (
+          <>
+            <StarsCanvas />
+            <ParticlesBackground />
+          </>
+        )}
 
         <Navbar
           toggleSidebar={toggleSidebar}
           activeSection={activeSection}
           setActiveSection={setActiveSection}
+          effectsEnabled={effectsEnabled}
+          setEffectsEnabled={setEffectsEnabled}
         />
 
         <div className="container mx-auto px-4 pt-24 pb-16">

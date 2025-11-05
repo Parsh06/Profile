@@ -33,11 +33,14 @@ const Stars = (props: any) => {
 
   // ✅ Generate sphere positions only once
   const sphere = useMemo(
-    () => generateSpherePoints(5000, 1.2),
+    () => generateSpherePoints(2000, 1.2),
     []
   )
 
   useFrame((_, delta) => {
+    if (typeof document !== "undefined" && document.visibilityState !== "visible") {
+      return
+    }
     if (ref.current) {
       ref.current.rotation.x -= delta / 10
       ref.current.rotation.y -= delta / 15
@@ -50,7 +53,7 @@ const Stars = (props: any) => {
         <PointMaterial
           transparent
           color="#f5d76e"
-          size={0.002}
+          size={0.0016}
           sizeAttenuation
           depthWrite={false}
         />
